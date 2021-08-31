@@ -1,0 +1,68 @@
+.edit-spares-section{
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.edit-spare{
+    position: relative;
+    top: 60px;
+    height: 500px;
+    width: 450px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: center;
+    align-self: center;
+}
+
+.edit-spare .form-control{
+    margin: 30px 0;
+}
+
+.edit-spare input[type='text'],
+.edit-spare input[type='number']{
+    border: 0px;
+    border-bottom: 1px solid  #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.edit-spare textarea{
+    border: 0px;
+    border-bottom: 1px solid  #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.edit-spare input:focus{
+    outline: none;
+}
+
+.edit-spare textarea:focus{
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .grid
+    .edit-spares-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .edit-spare{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .grid,
+    .edit-spares-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .edit-spare{
+        width: 100%;
+    }
+}

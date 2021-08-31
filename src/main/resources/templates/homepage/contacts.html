@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link th:href="@{/css/shared.css}" rel="stylesheet">
+    <link th:href="@{/css/contacts.css}" rel="stylesheet">
+</head>
+<body>
+<section class="home-section-link">
+    <div class="container flex">
+        <nav>
+            <ul>
+                <li><a class="btn btn-primary" th:href="@{/}">Home</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+</section>
+<section class="contacts-section">
+    <div class="container grid">
+        <div class="contacts-card card">
+            <div class="contacts flex">
+                <span>
+                <h3>CONTACT: 34567834567</h3>
+               </span>
+                <span>
+                <h3>CONTACT: 34567896789</h3>
+            </span>
+            </div>
+
+            <p>Use the provided contacts to call one of our sales representative
+            to ensure that your order has been recorded with us and ready for
+            delivery where necessary.</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

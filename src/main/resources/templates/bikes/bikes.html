@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Bikes</title>
+    <link th:href="@{/css/shared.css}" rel="stylesheet">
+    <link th:href="@{/css/bikes.css}" rel="stylesheet">
+</head>
+<body>
+<section class="add-bike-links">
+
+    <div class="container flex" >
+        <nav>
+            <ul>
+                <li><a class="btn btn-primary" th:href="@{/}">Home</a></li>
+                <li><a sec:authorize="hasAnyAuthority('ROLE_USER','ROLE_ADMIN')"
+                       th:href="@{/bike/show-bike-form}"
+                        class="btn btn-primary">Add a bike</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+</section>
+<section class="bikes-section">
+    <div class="container grid grid-3">
+        <div class="card" th:each="bike: ${bikes}">
+            <img th:src="@{${bike.getBikeImagePhotoPath()}}" alt="bike image">
+
+            <h1 th:text="${bike.bikeName}"></h1>
+            <h3 th:text="${'Kshs '+bike.bikePrice}"></h3>
+
+            <p th:text="${bike.bikeDescription}"></p>
+
+            <div class="modify-bike-links" >
+                <span>
+                     <a class="btn btn-primary" th:href="@{/contact}">Order</a>
+                </span>
+                <span sec:authorize="hasAuthority('ROLE_ADMIN')">
+                     <a class="btn btn-primary"
+                        th:href="@{/bike/edit/{id}(id=${bike.id})}">Edit</a>
+                </span>
+                <span sec:authorize="hasAuthority('ROLE_ADMIN')">
+                     <a class="btn" style="background-color: red"
+                        th:href="@{/bike/delete/{id}(id=${bike.id})}"
+                        onclick="if (!confirm('Are you sure!')) return false">Delete</a>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire45 Bicycle Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link th:href="@{/css/shared.css}" rel="stylesheet">
+    <link th:href="@{/css/home.css}" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+    <div class="container flex">
+        <h3>Empire45 Bicycle shop</h3>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/bike/all}">Bikes</a></li>
+                <li><a th:href="@{/spare/all}">Spares</a></li>
+                <li><a th:href="@{/contact}">Contacts</a></li>
+                <li><a th:href="@{/login}">Login</a></li>
+                <li><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</div>
+<section class="background-image">
+
+    <section class="showcase">
+
+    </section>
+
+    <section class="image-display">
+        <div class="container grid grid-3">
+            <div class="card">
+                <img th:src="@{/images/homepage/alex.png}" alt="image one">
+            </div>
+            <div class="card">
+                <img th:src="@{/images/homepage/isaac.png}" alt="racing image">
+            </div>
+
+            <div class="card">
+                <img th:src="@{/images/homepage/patrick.png}" alt="partners image">
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+<footer class="social-details">
+    <div class="container flex">
+        <h3>Copyright, &copy2021</h3>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook fa-2x"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-instagram fa-2x"></i> Instagram</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

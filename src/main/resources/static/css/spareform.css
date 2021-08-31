@@ -1,0 +1,70 @@
+.spare-form-section{
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.spare-form{
+    position: relative;
+    top: 60px;
+    height: 500px;
+    width: 450px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: center;
+    align-self: center;
+}
+
+.spare-form .form-control{
+    margin: 30px 0;
+}
+
+.spare-form input[type='text'],
+.spare-form input[type='number'],
+.spare-form input[type='file']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.spare-form textarea{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.spare-form input:focus{
+    outline: none;
+}
+
+.spare-form textarea:focus{
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .grid,
+    .spare-form-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .spare-form{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .grid,
+    .spare-form-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .spare-form{
+        width: 100%;
+    }
+
+}

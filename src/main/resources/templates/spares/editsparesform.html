@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Spares</title>
+  <link th:href="@{/css/shared.css}" rel="stylesheet">
+  <link th:href="@{/css/editsparesform.css}" rel="stylesheet">
+</head>
+<body>
+<section class="edit-spares-section">
+  <div class="container grid">
+    <div class="edit-spare card">
+      <h1>Edit Spare Part details</h1>
+      <form th:action="@{/spare/save-edit}" th:object="${spare}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-control">
+          <label for="sparePartName">spare part name</label>
+          <input type="text" id="sparePartName" th:field="*{sparePartName}">
+
+        </div>
+        <div class="form-control">
+          <label for="sparePartPrice">spare part price</label>
+          <input type="text" id="sparePartPrice" th:field="*{sparePartPrice}">
+
+        </div>
+        <div class="form-control">
+          <label for="sparePartDescription">spare part description</label>
+          <textarea id="sparePartDescription" th:field="*{sparePartDescription}"></textarea>
+
+        </div>
+        <input type="submit" value="update" class="btn btn-primary">
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

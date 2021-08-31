@@ -1,0 +1,67 @@
+.bike-form-section{
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.bike-form{
+    position: relative;
+    top: 60px;
+    height: 500px;
+    width: 450px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: center;
+    align-self: center;
+}
+
+.bike-form .form-control{
+    margin: 30px 0;
+}
+
+.bike-form input[type='text'],
+.bike-form input[type='number'],
+.bike-form input[type='file']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.bike-form textarea{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.bike-form input:focus{
+    outline: none;
+}
+
+.bike-form textarea:focus{
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .grid,
+    .bike-form-section .grid{
+        grid-template-columns: 1fr;
+    }
+    .bike-form{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid,
+    .bike-form-section .grid{
+        grid-template-columns: 1fr;
+    }
+    .bike-form{
+        width: 100%;
+    }
+}
+

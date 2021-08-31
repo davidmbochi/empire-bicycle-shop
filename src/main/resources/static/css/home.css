@@ -1,0 +1,151 @@
+
+body{
+    line-height: 1.3;
+}
+
+.background-image{
+    background-image: url("/images/homepage/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar{
+    background-color: black;
+    color: white;
+    height: 50px;
+    padding: 30px;
+    width: 100%;
+}
+
+.navbar .flex{
+    justify-content: space-between;
+}
+
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar a{
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+}
+.showcase{
+    height: 400px;
+    margin-top: 0px;
+}
+
+.showcase .shop-card{
+    width: 600px;
+}
+
+.showcase img{
+    width: 100%;
+}
+
+.showcase-text h1{
+    font-size: 50px;
+    justify-self: start;
+}
+
+.image-display{
+    margin: 10px 0px;
+}
+
+.image-display img{
+    width: 400px;
+    height: 350px;
+}
+
+.social-details{
+    margin-top: 0px;
+    background-color: black;
+    height: 80px;
+    color: white;
+}
+
+.social-details .flex{
+    justify-content: space-between;
+}
+
+.social-details ul{
+    display: flex;
+    list-style: none;
+}
+
+.social-details a{
+    margin-right: 60px;
+    text-decoration: none;
+    color: white;
+}
+
+@media(max-width: 768px){
+    .grid,
+    .showcase .grid,
+    .image-display .grid,
+    .image-display .grid-3{
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        height: 110px;
+    }
+    .navbar ul{
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .background-image{
+        margin-top: 0px;
+    }
+
+    .showcase{
+        height: 0px;
+        margin-top: 0px;
+    }
+
+    .showcase img{
+        width: 100%;
+    }
+
+    .showcase-text h1{
+        font-size: 30px;
+        padding: 0px 15px;
+    }
+
+    .image-display img{
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+@media(max-width: 500px){
+    .showcase img{
+        width: 100%;
+    }
+    .navbar{
+        height: 200px;
+    }
+    .navbar ul{
+        display: block;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    .navbar .flex{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .background-image{
+        margin-top: 0px;
+    }
+
+    .showcase{
+        height: 0px;
+    }
+}

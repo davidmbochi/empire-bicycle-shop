@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Spares</title>
+    <link th:href="@{/css/shared.css}" rel="stylesheet">
+    <link th:href="@{/css/spares.css}" rel="stylesheet">
+</head>
+<body>
+<section class="add-spare-link">
+       <div class="container flex" >
+           <nav>
+               <ul>
+                   <li><a class="btn btn-primary" th:href="@{/}">Home</a></li>
+                   <li><a sec:authorize="hasAnyAuthority('ROLE_USER','ROLE_ADMIN')"
+                          th:href="@{/spare/spare-form}"
+                   class="btn btn-primary">Add Spare Part</a></li>
+               </ul>
+           </nav>
+
+       </div>
+</section>
+<section class="spares-section">
+  <div class="container grid grid-3">
+    <div class="card" th:each="spare: ${spares}">
+        <img th:src="@{${spare.getSparePhotoPath()}}" alt="spare image">
+
+        <h1 th:text="${spare.sparePartName}"></h1>
+
+        <h3 th:text="${'Kshs '+spare.sparePartPrice}"></h3>
+
+        <p th:text="${spare.sparePartDescription}"></p>
+
+        <div class="modify-spare-links">
+            <span>
+                 <a class="btn btn-primary" th:href="@{/contact}">Order</a>
+            </span>
+            <span sec:authorize="hasAuthority('ROLE_ADMIN')">
+                <a  th:href="@{/spare/edit/{id}(id=${spare.id})}" class="btn btn-primary">Edit</a>
+            </span>
+            <span sec:authorize="hasAuthority('ROLE_ADMIN')">
+                  <a  th:href="@{/spare/delete/{id}(id=${spare.id})}" class="btn"
+                      style="background-color: red"
+                      onclick="if (!confirm('are you sure?')) return false">Delete</a>
+            </span>
+        </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</body>
+</html>

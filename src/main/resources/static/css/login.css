@@ -1,0 +1,55 @@
+.login-section{
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.login-card{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: center;
+    align-self: center;
+}
+
+.login-card .form-control{
+    margin: 30px 0;
+}
+
+.login-card input[type='text'],
+.login-card input[type='password']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.login-card input:focus{
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .grid
+    .login-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .login-card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid
+    .login-section .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .login-card{
+        width: 100%;
+    }
+}

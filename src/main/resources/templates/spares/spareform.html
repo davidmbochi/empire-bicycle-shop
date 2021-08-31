@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Spare Part</title>
+    <link th:href="@{/css/shared.css}" rel="stylesheet">
+    <link th:href="@{/css/spareform.css}" rel="stylesheet">
+</head>
+<body>
+<section class="spare-form-section">
+    <div class="container grid">
+        <div class="spare-form card">
+            <h1>Add Spare Part</h1>
+            <form th:action="@{/spare/save}" th:object="${spare}" method="post" enctype="multipart/form-data">
+                <div class="form-control">
+                    <label for="sparePartName">spare part name</label>
+                    <input type="text" id="sparePartName" th:field="*{sparePartName}" required>
+
+                </div>
+                <div class="form-control">
+                    <label for="sparePartPrice">spare part price</label>
+                    <input type="number" id="sparePartPrice" th:field="*{sparePartPrice}" required>
+
+                </div>
+                <div class="form-control">
+                    <label for="sparePartDescription">spare part description</label>
+                    <textarea id="sparePartDescription" th:field="*{sparePartDescription}"></textarea>
+
+                </div>
+                <div class="form-control">
+                    <label>spare part image</label>
+                    <input type="file" name="image" accept="image/png" required>
+
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="save">
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

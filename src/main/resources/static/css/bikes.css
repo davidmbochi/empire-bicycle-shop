@@ -1,0 +1,76 @@
+.add-bike-links{
+    background-color: lightgray;
+    height: 80px;
+    color: white;
+}
+
+.add-bike-links ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.add-bike-links a{
+    margin-right: 60px;
+    text-decoration: none;
+}
+
+.add-bike-links .flex{
+    justify-content: flex-end;
+}
+
+.bikes-section .card{
+    width: 350px;
+}
+.bikes-section img{
+    width: 100%;
+}
+
+.bikes-section .grid{
+    align-items: start;
+}
+
+.modify-bike-links a {
+    text-decoration: none;
+}
+
+.bikes-section p{
+    font-size: 20px;
+}
+
+.bikes-section .card a{
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .add-bike-links .flex{
+        flex-direction: column;
+    }
+
+    .grid,
+    .bikes-section .grid,
+    .bikes-section .grid-3{
+        grid-template-columns: 1fr;
+    }
+
+    .bikes-section img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .add-bike-links .flex{
+        flex-direction: column;
+    }
+
+    .grid,
+    .bikes-section .grid,
+    .bikes-section .grid-3{
+        grid-template-columns: 1fr;
+    }
+
+    .bikes-section img{
+        width: 100%;
+    }
+
+}
+

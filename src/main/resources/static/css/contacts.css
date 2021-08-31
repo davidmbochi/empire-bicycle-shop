@@ -1,0 +1,27 @@
+.home-section-link{
+    background-color: lightgray;
+    height: 80px;
+    color: white;
+}
+
+.home-section-link ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.home-section-link a{
+    margin-right: 60px;
+    text-decoration: none;
+}
+
+.home-section-link .flex{
+    justify-content: flex-end;
+}
+
+.contacts-section p{
+    font-size: 30px;
+}
+
+.contacts-section span{
+    margin-right: 20px;
+}
