@@ -26,9 +26,6 @@ public class BikeController {
 
     @GetMapping("/all")
     public String findAllBikes(Model model){
-        if (bikeService.findAllBikes().equals(null)){
-            return "redirect:/show-bike-form";
-        }
         model.addAttribute("bikes", bikeService.findAllBikes());
         return "bikes/bikes";
     }
