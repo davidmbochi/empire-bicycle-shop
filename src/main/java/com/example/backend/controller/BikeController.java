@@ -26,6 +26,9 @@ public class BikeController {
 
     @GetMapping("/all")
     public String findAllBikes(Model model){
+        if (bikeService.findAllBikes().equals(null)){
+            return "bikes/bikes";
+        }
         model.addAttribute("bikes", bikeService.findAllBikes());
         return "bikes/bikes";
     }
