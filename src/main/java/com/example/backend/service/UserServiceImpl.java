@@ -4,6 +4,7 @@ import com.example.backend.model.Role;
 import com.example.backend.model.User;
 import com.example.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @RequiredArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
@@ -36,6 +38,7 @@ public class UserServiceImpl implements UserService{
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUserByUserName(username);
         if (user == null){
+            log.error("username not found");
             throw new UsernameNotFoundException("username  not found");
         }else {
             return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword(),mapRolesToAuthority(user.getRoles()));
