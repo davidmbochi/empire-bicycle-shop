@@ -27,6 +27,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/css","/images").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/bike/all").permitAll()
                 .antMatchers("/bike/edit/**").hasAuthority("ROLE_ADMIN")
