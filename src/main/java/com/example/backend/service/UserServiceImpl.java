@@ -1,7 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.model.Role;
-import com.example.backend.model.User;
+import com.example.backend.model.Users;
 import com.example.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,24 +24,24 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
     @Override
-    public List<User> findAll() {
+    public List<Users> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public void saveUser(User user) {
-        userRepository.save(user);
+    public void saveUser(Users users) {
+        userRepository.save(users);
     }
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findUserByUserName(username);
-        if (user == null){
+        Users users = userRepository.findUserByUserName(username);
+        if (users == null){
             log.error("username not found");
             throw new UsernameNotFoundException("username  not found");
         }else {
-            return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword(),mapRolesToAuthority(user.getRoles()));
+            return new org.springframework.security.core.userdetails.User(users.getUserName(), users.getPassword(),mapRolesToAuthority(users.getRoles()));
         }
     }
     private Collection<GrantedAuthority> mapRolesToAuthority(Collection<Role> roles){

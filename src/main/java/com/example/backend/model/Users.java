@@ -13,7 +13,7 @@ import java.util.Collection;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +33,8 @@ public class User {
     )
     private Collection<Role> roles = new ArrayList<>();
 
-    public User(String userName,
-                String password) {
+    public Users(String userName,
+                 String password) {
        this.userName = userName;
        this.password = password;
     }
