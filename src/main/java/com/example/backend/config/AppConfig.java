@@ -43,7 +43,7 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/spare/delete/**").hasAuthority("ROLE_ADMIN")
                 .and()
                 .formLogin()
-                .loginPage("/auth/login.html")
+                .loginPage("/login")
                 .loginProcessingUrl("/processLogin")
                 .defaultSuccessUrl("/bike/all")
                 .permitAll()
