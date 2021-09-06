@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "bike")
-@Table
+@Entity
+@Table(name = "bike",schema = "public")
 public class Bike{
 
     @Id

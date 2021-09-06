@@ -8,7 +8,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
-@Entity(name = "spare_parts")
+@Entity
+@Table(name = "spare_parts",schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
 public class SparePart {
