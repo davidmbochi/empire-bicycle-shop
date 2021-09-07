@@ -58,7 +58,7 @@ public class BikeController {
                         requireNonNull(Objects.requireNonNull(multipartFile.getOriginalFilename()).replace(" ","_")));
         bike.setPhoto(fileName);
         Bike theBike = bikeService.addBike(bike);
-        String uploadDir = "./upload/"+theBike.getId();
+        String uploadDir = StringUtils.cleanPath("./upload/")+theBike.getId();
         Path uploadPath = Paths.get(uploadDir);
         if (!Files.exists(uploadPath)){
             Files.createDirectories(uploadPath);

@@ -3,7 +3,6 @@ package com.example.backend.controller;
 import com.example.backend.model.SparePart;
 import com.example.backend.service.SparePartService;
 import lombok.RequiredArgsConstructor;
-import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -43,7 +42,7 @@ public class SparePartController {
                 .getOriginalFilename()).replace(" ","_")));
         sparePart.setSparePartPhoto(fileName);
         SparePart savedSparePart = sparePartService.addSparePart(sparePart);
-        String uploadDirectory = "./upload-spare/"+savedSparePart.getId();
+        String uploadDirectory = StringUtils.cleanPath("./upload-spare/")+savedSparePart.getId();
         Path uploadSparePath = Paths.get(uploadDirectory);
         if (!Files.exists(uploadSparePath)){
             Files.createDirectories(uploadSparePath);
