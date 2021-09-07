@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService{
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users users = userRepository.findUserByUserName(username);
-        return new org.springframework.security.core.userdetails.User(users.getUserName(), users.getPassword(),mapRolesToAuthority(users.getRoles()));
+        return new User(users.getUserName(), users.getPassword(),mapRolesToAuthority(users.getRoles()));
     }
     private Collection<GrantedAuthority> mapRolesToAuthority(Collection<Role> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList());
