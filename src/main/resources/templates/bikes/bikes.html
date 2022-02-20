@@ -17,6 +17,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <li><a sec:authorize="hasAnyAuthority('ROLE_USER','ROLE_ADMIN')"
                        th:href="@{/bike/show-bike-form}"
                         class="btn btn-primary">Add a bike</a></li>
+                <li><a class="btn btn-primary" th:href="@{/logout}"
+                       sec:authorize="isAuthenticated()">Logout</a></li>
             </ul>
         </nav>
 
