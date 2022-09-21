@@ -28,7 +28,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <section class="bikes-section">
     <div class="container grid grid-3">
         <div class="card" th:each="bike: ${bikes}">
-            <img th:src="@{${bike.getBikeImagePhotoPath()}}" alt="bike image">
+            <img th:src="@{${bike.bikeImage}}" alt="bike image">
 
             <h1 th:text="${bike.bikeName}"></h1>
             <h3 th:text="${'Kshs '+bike.bikePrice}"></h3>

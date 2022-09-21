@@ -27,8 +27,8 @@ public class SparePart {
     @Column(name = "spare_part_description")
     private String sparePartDescription;
 
-    @Column(name = "spare_part_photo", updatable = false)
-    private String sparePartPhoto;
+    @Column(name = "spare_part_image")
+    private String sparePartImage;
 
     public SparePart(String sparePartName, BigDecimal sparePartPrice, String sparePartDescription) {
         this.sparePartName = sparePartName;
@@ -36,7 +36,4 @@ public class SparePart {
         this.sparePartDescription = sparePartDescription;
     }
 
-    public String getSparePhotoPath(){
-        return "/upload-spare/"+id+"/"+sparePartPhoto;
-    }
 }

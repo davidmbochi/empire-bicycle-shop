@@ -26,7 +26,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <section class="spares-section">
   <div class="container grid grid-3">
     <div class="card" th:each="spare: ${spares}">
-        <img th:src="@{${spare.getSparePhotoPath()}}" alt="spare image">
+        <img th:src="@{${spare.sparePartImage}}" alt="spare image">
 
         <h1 th:text="${spare.sparePartName}"></h1>
 

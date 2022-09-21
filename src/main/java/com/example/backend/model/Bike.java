@@ -27,8 +27,8 @@ public class Bike{
     @Column(name = "bike_description")
     private String bikeDescription;
 
-    @Column(nullable = true, length = 64, updatable = false)
-    private String photo;
+    @Column(name = "bike_image")
+    private String bikeImage;
 
     public Bike(String bikeName,
                 BigDecimal bikePrice,
@@ -36,11 +36,6 @@ public class Bike{
         this.bikeName = bikeName;
         this.bikePrice = bikePrice;
         this.bikeDescription = bikeDescription;
-    }
-
-    @Transient
-    public String getBikeImagePhotoPath(){
-        return "/upload/"+id+"/"+photo;
     }
 
 }

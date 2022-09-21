@@ -1,27 +1,22 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.SparePart;
+import com.example.backend.service.FileUploadService;
 import com.example.backend.service.SparePartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.Objects;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("spare")
 public class SparePartController {
     private final SparePartService sparePartService;
+    private final FileUploadService fileUploadService;
 
     @GetMapping("/all")
     public String findAllSpareParts(Model model){
@@ -38,18 +33,9 @@ public class SparePartController {
     @PostMapping("/save")
     public String saveSparePart(@ModelAttribute("spare") SparePart sparePart,
                                 @RequestParam("image")MultipartFile multipartFile) throws IOException {
-        String fileName = StringUtils.cleanPath(Objects.requireNonNull(Objects.requireNonNull(multipartFile
-                .getOriginalFilename()).replace(" ","_")));
-        sparePart.setSparePartPhoto(fileName);
-        SparePart savedSparePart = sparePartService.addSparePart(sparePart);
-        String uploadDirectory = StringUtils.cleanPath("./upload-spare/")+savedSparePart.getId();
-        Path uploadSparePath = Paths.get(uploadDirectory);
-        if (!Files.exists(uploadSparePath)){
-            Files.createDirectories(uploadSparePath);
-        }
-        InputStream inputStream = multipartFile.getInputStream();
-        Path filePath = uploadSparePath.resolve(fileName);
-        Files.copy(inputStream,filePath, StandardCopyOption.REPLACE_EXISTING);
+        sparePart.setSparePartImage(fileUploadService.uploadFile(multipartFile));
+        sparePartService.addSparePart(sparePart);
+
         return "redirect:/spare/all";
     }
 

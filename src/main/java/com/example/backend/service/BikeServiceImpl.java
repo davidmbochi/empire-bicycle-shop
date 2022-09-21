@@ -30,8 +30,7 @@ public class BikeServiceImpl implements BikeService {
 
     @Override
     public Bike addBike(Bike bike) {
-        Bike theBike = bikeRepository.save(bike);
-        return theBike;
+        return bikeRepository.save(bike);
     }
 
     @Override
