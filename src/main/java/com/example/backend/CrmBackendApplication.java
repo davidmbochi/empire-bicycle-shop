@@ -51,7 +51,7 @@ public class CrmBackendApplication {
 				users.get(1).setRoles(List.of(role_admin));
 			}
 
-			userRepository.saveAll(users);
+//			userRepository.saveAll(users);
 		};
 	}
 
