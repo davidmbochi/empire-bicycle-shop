@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="crm-backend" target="17" />
+      <module name="crm-backend" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
