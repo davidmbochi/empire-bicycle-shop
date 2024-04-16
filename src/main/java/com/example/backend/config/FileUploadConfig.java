@@ -12,7 +12,7 @@ public class FileUploadConfig {
     @Bean
     public Cloudinary cloudinary(){
         Map<String, String> config =
-                Map.of("cloud_name","empire45",
+                Map.of("cloud_name","javawhizz",
                         "api_key","452296839227936",
                         "api_secret","BOJS5hEOpfw6pUZ0IUSlXtb03ZA");
         return new Cloudinary(config);
