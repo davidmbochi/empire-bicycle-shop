@@ -1,0 +1,11 @@
+#database connection details
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 25MB
+
+  #file upload details
+  profiles:
+    active: prod
+

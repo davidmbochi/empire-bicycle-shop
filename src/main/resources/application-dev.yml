@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-csdnr1o8fa8c73f735ng-a.oregon-postgres.render.com/empire_bicycle_shop_ouu0
+    username: empire_bicycle_shop_ouu0_user
+    password: jNtvQSkm3QyCBgtmuBM6okj2DzqFi0rv
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
